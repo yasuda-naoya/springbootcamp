@@ -14,10 +14,11 @@ public class UserController {
     GetUserServiceImpl getUserServiceImpl = new GetUserServiceImpl();
 
     @RequestMapping("/users")
-    public String getArrayList() {
+    public ArrayList<User> getArrayList() {
         ArrayList<User> list = getUserServiceImpl.getAllUser();
         System.out.println("-----------------------------------------------");
         System.out.println(list);
+        System.out.println("-----------------------------------------------");
         return null;
     }
 
