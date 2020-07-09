@@ -8,6 +8,7 @@ group = 'com.sun_m'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+
 repositories {
 	mavenCentral()
 }
@@ -19,6 +20,7 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	compile("org.springframework.boot:spring-boot-devtools")
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 }
 
 test {
