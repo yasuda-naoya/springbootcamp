@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import com.sun_m.bootcamp.entity.User;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class GetUserServiceImpl implements GetUserService {
     @Override
     public ArrayList<User> getAllUser() {
