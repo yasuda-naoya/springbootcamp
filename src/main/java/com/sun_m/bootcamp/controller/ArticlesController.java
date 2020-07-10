@@ -40,5 +40,4 @@ public class ArticlesController {
         System.out.println("3-----------------------------------------------");
         return obj;
     }
-
 }
