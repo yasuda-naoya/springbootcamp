@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,10 +24,7 @@ public class ArticlesController {
     @ResponseBody
     @CrossOrigin
     public List<Articles> getAllArticles() {
-        System.out.println("1-----------------------------------------------");
         List<Articles> list = ArticlesRepository.findAll();
-        System.out.println("2-----------------------------------------------");
-        System.out.println("3-----------------------------------------------");
         return list;
     }
 
@@ -33,11 +32,18 @@ public class ArticlesController {
     @ResponseBody
     @CrossOrigin
     public Articles getArticle(@PathVariable("id") int id) {
-        System.out.println("1-----------------------------------------------");
         Articles obj = ArticlesRepository.getById(id);
         System.out.println(obj);
-        System.out.println("2-----------------------------------------------");
-        System.out.println("3-----------------------------------------------");
         return obj;
+    }
+
+    @RequestMapping(path = "/post")
+    @ResponseBody
+    public Articles postArticle(@RequestBody Articles articles) {
+        System.out.println("******************************************************");
+        articles.setId(20);
+        System.out.println(articles);
+        System.out.println("******************************************************");
+        return ArticlesRepository.save(articles);
     }
 }
