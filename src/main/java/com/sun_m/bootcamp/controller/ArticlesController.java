@@ -46,4 +46,5 @@ public class ArticlesController {
         System.out.println("******************************************************");
         return ArticlesRepository.save(articles);
     }
+    //コメント追加しています。
 }
